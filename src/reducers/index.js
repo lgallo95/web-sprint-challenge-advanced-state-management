@@ -1,15 +1,15 @@
-import {FETCH_START, FETCH_SUCCESS, FETCH_FAIL, ADD_SMURF,ADD_ERROR} from '../actions/index'
+import {FETCH_START, FETCH_SUCCESS, FETCH_FAIL, ADD_SMURF, ADD_ERROR} from '../actions/index'
 
 export const initialState = {
     smurfs: [{
-        id: 1,
-        name: 'Lorenzo',
-        position: 'Test',
-        nickname: 'Enzo',
-        description: 'Gym Life'
+        id: '',
+        name: '',
+        position: '',
+        nickname: '',
+        description: ''
     }],
     loading: false,
-    error: ''
+    error:''
 }
 
 const reducer = (state = initialState, action)=>{
@@ -17,7 +17,7 @@ const reducer = (state = initialState, action)=>{
         case(FETCH_START):
             return({
                 ...state,
-                smurfs: {},
+                smurfs: [],
                 isFetching: true,
                 error:''
             });
@@ -31,21 +31,20 @@ const reducer = (state = initialState, action)=>{
         case(FETCH_FAIL):
             return({
                 ...state,
-                smurfs: {},
+                smurfs: [],
                 isFetching: false,
                 error: action.payload
             })
         case(ADD_SMURF):
             return({
                 ...state,
-                smurfs: [...state.smurfs, action.payload]
+                smurfs: action.payload
             })
         case(ADD_ERROR):
             return({
                 ...state,
                 error: action.payload
             })
-            //7. Add in a reducer case that adds in a value to the error message.
         default:
         return state;
     }

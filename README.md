@@ -59,7 +59,7 @@ In this project, you will build the reducer, actions and basic redux connects to
   * [x] Add in a reducer case to accommodate the successful smurf api fetch.
   * [x] Add in a reducer cases to accommodate an error.
   * [x] Add in a reducer case to accommodate adding a smurf (including the name, nickname, position, description and an internally generated id) into your smurf list.
-  * [!!] Add in a reducer case that adds in a value to the error message.
+  * [x] Add in a reducer case that adds in a value to the error messag0e.
 
 ### Complete index.js
   <!-- Connect your application to reducer through redux with the thunk and logger middleware packages attached. -->
@@ -80,9 +80,9 @@ In this project, you will build the reducer, actions and basic redux connects to
 ### Complete components/SmurfList.js
   Connect this component to your smurfs and loading screen state slices.
   
-  * [ ] Connect the smurfs and loading state values to the SmurfList component.
-  * [ ] Replace the single Smurf component instance with a map return a Smurf component for each entry in the smurfs list.
-  * [ ] Replace the static isLoading variable with the state loading variable.
+  * [x] Connect the smurfs and loading state values to the SmurfList component.
+  * [x] Replace the single Smurf component instance with a map return a Smurf component for each entry in the smurfs list.
+  * [x] Replace the static isLoading variable with the state loading variable.
 
 ### Complete components/AddForm.js
   Connect this component to the error state slice, setError and addSmurf actions. Complete the form handling code.
