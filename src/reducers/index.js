@@ -1,8 +1,50 @@
+import {FETCH_START, FETCH_SUCCESS, FETCH_FAIL, ADD_SMURF} from '../actions/index'
 
 export const initialState = {
+    smurfs: {
+        id: 1,
+        name: 'Lorenzo',
+        position: 'Test',
+        nickname: 'Enzo',
+        description: 'Gym Life'
+    },
+    loading: false,
+    error: ''
 }
 
-const reducer = ()=>{
+const reducer = (state = initialState, action)=>{
+    switch (action.type) {
+        case(FETCH_START):
+            return({
+                ...state,
+                person: {},
+                isFetching: true,
+                error:''
+            });
+        case(FETCH_SUCCESS):
+            return({
+                ...state,
+                person: action.payload,
+                isFetching: false,
+                error:''
+            })
+        case(FETCH_FAIL):
+            return({
+                ...state,
+                person: {},
+                isFetching: false,
+                error: action.payload
+            })
+        case(ADD_SMURF):
+            return({
+                ...state,
+                smurfs: [...state.smurfs, action.payload]
+            })
+
+            //7. Add in a reducer case that adds in a value to the error message.
+        default:
+        return state;
+    }
 }
 
 //**************DO NOT EDIT ANY CODE BEYOND THIS POINT**************//
