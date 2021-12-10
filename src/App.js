@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-
+import React, { Component, useState } from "react";
+import { connect } from 'react-redux'
+import { fetchSmurfs } from './actions/index'
 import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
 import Header from './components/Header';
@@ -20,7 +21,11 @@ const App = ()=> {
   );
 }
 
-export default App;
+const mapState = (state) => {
+  return state
+}
+
+export default connect(mapState, {fetchSmurfs})(App);
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.
