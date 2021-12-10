@@ -42,7 +42,6 @@ export const AddSmurf = (x) => {
         description: x.description,
       })
       .then((res) => {
-          console.log(res)
         dispatch(fetchSuccess(res.data));
       })
       .catch((err) => dispatch(fetchFail(err)));
